@@ -37,6 +37,13 @@ app.get('/palindrome/:pal', (req, res) => {
     }
 })
 
+app.get('/oddtest/:nb', (req, res) => {
+    let nb = Number(req.params.nb)
+    nb % 2 === 0
+        ? res.send(`${req.params.nb} is pair`)
+        : res.send(`${req.params.nb} is impair`)
+})
+
 app.listen(PORT, () => {
     console.log(`Example app listening at http://localhost:${PORT}`)
 })
